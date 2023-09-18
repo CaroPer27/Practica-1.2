@@ -76,3 +76,18 @@ for i in range(len(valoresE)):
 
 print(distanciasM)
 
+#Carolina
+
+#Distancias ordenadas Minkowski
+distancias.sort()
+print(distancias)
+#Distancias ordenadas Mahalanobis
+distanciasM.sort()
+print(distanciasM)
+
+#Elementos K = 5 Minkowski
+print(distancias[:5])
+print('La distancia mas corta con la funcion de Minkowski es',distancias[0])
+#Elementos K = 5 Mahalanobis
+print(distanciasM[:5])
+print('La distancia mas corta con la funcion de Mahalanobis es',distanciasM[0])
