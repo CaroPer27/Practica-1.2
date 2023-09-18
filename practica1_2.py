@@ -135,3 +135,31 @@ for clase in clases:
 # Encontramos la clase con más votos
 Clase = max(conteo, key=conteo.get)
 print(f'La clase asignada por votación mayoritaria con la distancia Mahalanobis es: {Clase}')
+
+from scipy.spatial import distance
+import matplotlib.pyplot as plt
+
+coloresM = {'Setosa': 'red', 'Versicolor': 'green', 'Virginica': 'blue'}
+
+# Crear una lista de colores para cada punto basada en la clase original
+colores = [coloresM[clases] for clases in y]
+
+# Crear el gráfico de dispersión para Minkowski
+plt.figure(figsize=(12, 6))
+plt.subplot(121)
+plt.scatter(x[:, 0], x[:, 1], c=colores, s=50)
+
+plt.xlabel('Característica 1')
+plt.ylabel('Característica 2')
+plt.title('Clasificación por Minkowski')
+
+# Crear el gráfico de dispersión para Mahalanobis
+plt.subplot(122)
+plt.scatter(x[:, 0], x[:, 1], c=colores, s=50)
+
+plt.xlabel('Característica 1')
+plt.ylabel('Característica 2')
+plt.title('Clasificación por Mahalanobis')
+
+plt.tight_layout()
+plt.show()
